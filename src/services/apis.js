@@ -1,5 +1,5 @@
 
-const BASE_URL="https://studynotion-1-4p7x.onrender.com/api/v1";
+const BASE_URL=process.env.BASE_URL;
 
 export const categories={
 CATEGORIES_API:BASE_URL+"/course/getallcategories"
