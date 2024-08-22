@@ -17,7 +17,7 @@ const cors=require("cors");
 const fileupload= require("express-fileupload");
 const dotenv=require("dotenv").config();
 
-const port=4000;
+const PORT=process.env.PORT||4000;
 //middlewares
 
 
@@ -72,6 +72,6 @@ app.get("/",(req,res)=>{
     })
 })
 
-server.listen(port,()=>{
-console.log(`app is running at server port ${port}`);
+server.listen(PORT,()=>{
+console.log(`app is running at server port ${PORT}`);
 })
