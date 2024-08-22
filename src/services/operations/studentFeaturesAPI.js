@@ -7,8 +7,6 @@ import { setloading } from "../../slices/profileslice";
 
 const {COURSE_PAYMENT_API,COURSE_VERIFY_API,SEND_PAYMENT_SUCCESS_EMAIL_API}=studentEndpoints;
 
-const RAZORPAY_KEY="rzp_test_265iURK4iojh3A";
-
 function onloadScript(src){
     return new Promise((resolve)=>{
         const script=document.createElement("script");
@@ -49,7 +47,7 @@ try {
 
     // options
     const options= {
-        key: RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
+        key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
         amount: `${orderResponse.data.message.amount}`,
         currency: orderResponse.data.message.currency,
         order_id: orderResponse.data.message.id,
