@@ -3,8 +3,8 @@ require("dotenv").config();
 
 const database= async(req,res)=>{
  mongoose.connect(process.env.DATABASE_URL,
-    {useNewUrlParser:true},
-    {useUnifiedTopology: true}
+    {useNewUrlParser:true,
+    useUnifiedTopology: true}
     )
     .then(()=>{console.log( "Database Connected Successfully!" )})
     .catch((err) => {console.log(`Error Connecting to Database ${err}`)
